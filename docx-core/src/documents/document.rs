@@ -5,7 +5,7 @@ use super::*;
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Document {
     pub children: Vec<DocumentChild>,
@@ -13,7 +13,7 @@ pub struct Document {
     pub has_numbering: bool,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum DocumentChild {
     Paragraph(Box<Paragraph>),
     Table(Box<Table>),

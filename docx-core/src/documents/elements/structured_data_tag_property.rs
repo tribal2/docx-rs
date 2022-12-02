@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 use crate::documents::BuildXML;
 // use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct StructuredDataTagProperty {
     pub run_property: RunProperty,

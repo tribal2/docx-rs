@@ -1,9 +1,9 @@
-use serde::{Serialize, Serializer};
+use serde::{Serialize, Serializer, Deserialize};
 
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Deserialize, Debug, Clone, PartialEq)]
 pub struct TableStyle {
     val: String,
 }

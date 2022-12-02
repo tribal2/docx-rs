@@ -1,13 +1,13 @@
 use std::fmt;
 use wasm_bindgen::prelude::*;
 
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::errors;
 use std::str::FromStr;
 
 #[wasm_bindgen]
-#[derive(Debug, Clone, PartialEq, Serialize, ts_rs::TS)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ts_rs::TS)]
 #[serde(rename_all = "camelCase")]
 #[ts(export)]
 pub enum HyperlinkType {

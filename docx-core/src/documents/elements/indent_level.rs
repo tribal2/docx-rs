@@ -1,7 +1,9 @@
+use serde::Deserialize;
+
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct IndentLevel {
     pub val: usize,
 }

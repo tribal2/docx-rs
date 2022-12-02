@@ -1,10 +1,10 @@
 use crate::documents::BuildXML;
 use crate::{ParseXmlError, XmlDocument};
 use serde::ser::SerializeSeq;
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use std::str::FromStr;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct CustomItem(XmlDocument);
 
 impl FromStr for CustomItem {

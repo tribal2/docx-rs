@@ -1,3 +1,4 @@
+use serde::Deserialize;
 use serde::Serialize;
 
 use crate::documents::BuildXML;
@@ -7,7 +8,7 @@ use crate::StyleType;
 
 use super::*;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Style {
     pub style_id: String,
@@ -219,7 +220,7 @@ impl BuildXML for Style {
                 .add_child(&self.table_cell_property)
                 .add_child(&self.table_property);
         }
-        
+
         if let Some(ref based_on) = self.based_on {
             b = b.add_child(based_on)
         }

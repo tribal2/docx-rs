@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 use crate::documents::BuildXML;
@@ -6,7 +6,7 @@ use crate::escape::escape;
 use crate::types::*;
 use crate::{create_hyperlink_rid, generate_hyperlink_id, xml_builder::*};
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(tag = "type")]
 #[serde(rename_all = "camelCase")]
 pub enum HyperlinkData {
@@ -21,7 +21,7 @@ pub enum HyperlinkData {
     },
 }
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Hyperlink {
     #[serde(flatten)]

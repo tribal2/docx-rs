@@ -1,8 +1,10 @@
+use serde::Deserialize;
+
 use crate::documents::BuildXML;
 use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct TableGrid {
     grid: Vec<usize>,
 }

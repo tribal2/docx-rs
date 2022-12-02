@@ -4,7 +4,7 @@ use serde::Serialize;
 use crate::documents::*;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum InstrText {
     TOC(InstrToC),
     TC(InstrTC),

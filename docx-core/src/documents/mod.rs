@@ -71,12 +71,12 @@ pub use web_settings::*;
 pub use webextension::*;
 pub use xml_docx::*;
 
-use serde::{ser, Serialize};
+use serde::{ser, Serialize, Deserialize};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct Image(pub Vec<u8>);
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct Png(pub Vec<u8>);
 
 pub type ImageIdAndPath = (String, String);
@@ -102,7 +102,7 @@ impl ser::Serialize for Png {
     }
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Docx {
     pub content_type: ContentTypes,

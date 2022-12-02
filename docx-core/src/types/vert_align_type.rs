@@ -1,11 +1,12 @@
 use std::fmt;
 use std::str::FromStr;
+use serde::Deserialize;
 use wasm_bindgen::prelude::*;
 
 use super::errors;
 
 #[wasm_bindgen]
-#[derive(Copy, Clone, Debug, PartialEq)]
+#[derive(Copy, Clone, Debug, PartialEq, Deserialize)]
 pub enum VertAlignType {
     Baseline,
     SuperScript,

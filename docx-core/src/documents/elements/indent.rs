@@ -1,11 +1,11 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use crate::documents::BuildXML;
 use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Indent {
     pub start: Option<i32>,
     pub end: Option<i32>,

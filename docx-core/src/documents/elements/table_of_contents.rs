@@ -6,7 +6,7 @@ use crate::xml_builder::*;
 
 // https://c-rex.net/projects/samples/ooxml/e1/Part4/OOXML_P4_DOCX_TOCTOC_topic_ID0ELZO1.html
 // This struct is only used by writers
-#[derive(Serialize, Debug, Clone, PartialEq, Default)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct TableOfContents {
     pub instr: InstrToC,
     pub items: Vec<TableOfContentsItem>,

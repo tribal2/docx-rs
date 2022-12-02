@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 use crate::documents::BuildXML;
 use crate::types::{AlignmentType, SpecialIndentType};
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq, Default)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct ParagraphProperty {
     pub run_property: RunProperty,

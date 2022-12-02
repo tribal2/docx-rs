@@ -1,9 +1,9 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct BookmarkStart {
     pub id: usize,
     pub name: String,

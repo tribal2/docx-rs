@@ -4,14 +4,14 @@ use serde::Serialize;
 use crate::documents::*;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Delete {
     pub author: String,
     pub date: String,
     pub children: Vec<DeleteChild>,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum DeleteChild {
     Run(Run),
     CommentStart(Box<CommentRangeStart>),

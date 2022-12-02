@@ -2,11 +2,11 @@ use std::fmt;
 use wasm_bindgen::prelude::*;
 
 use super::errors;
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use std::str::FromStr;
 
 #[wasm_bindgen]
-#[derive(Debug, Clone, PartialEq, Serialize, Copy)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum StyleType {
     Paragraph,

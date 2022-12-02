@@ -1,10 +1,10 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use crate::documents::BuildXML;
 use crate::escape::escape;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 pub struct WebExtensionProperty {
     pub name: String,
     pub value: String,
@@ -19,7 +19,7 @@ impl WebExtensionProperty {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 pub struct WebExtension {
     pub id: String,
     pub version: String,

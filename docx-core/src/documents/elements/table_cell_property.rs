@@ -1,3 +1,4 @@
+use serde::Deserialize;
 use wasm_bindgen::prelude::*;
 use serde::Serialize;
 
@@ -7,7 +8,7 @@ use crate::types::*;
 use crate::xml_builder::*;
 
 #[wasm_bindgen]
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct TableCellProperty {
     width: Option<TableCellWidth>,

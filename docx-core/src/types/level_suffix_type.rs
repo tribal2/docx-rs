@@ -1,13 +1,13 @@
 use std::fmt;
 use wasm_bindgen::prelude::*;
 
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::errors;
 use std::str::FromStr;
 
 #[wasm_bindgen]
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub enum LevelSuffixType {
     Nothing,

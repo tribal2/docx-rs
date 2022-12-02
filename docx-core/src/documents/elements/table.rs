@@ -1,12 +1,12 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 use crate::documents::BuildXML;
 use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Table {
     pub rows: Vec<TableChild>,
@@ -15,7 +15,7 @@ pub struct Table {
     pub property: TableProperty,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum TableChild {
     TableRow(TableRow),
 }

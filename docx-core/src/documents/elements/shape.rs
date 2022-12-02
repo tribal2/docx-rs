@@ -1,6 +1,6 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
-#[derive(Serialize, Debug, Clone, PartialEq, Default, ts_rs::TS)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub struct Shape {
@@ -11,7 +11,7 @@ pub struct Shape {
 }
 // Experimental, For now reader only.
 
-#[derive(Serialize, Debug, Clone, PartialEq, Default, ts_rs::TS)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub struct ImageData {

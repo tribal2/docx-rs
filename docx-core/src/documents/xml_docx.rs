@@ -1,10 +1,12 @@
+use serde::Deserialize;
+
 use super::XMLDocProps;
 
 use crate::zipper;
 use std::io::prelude::*;
 use std::io::Seek;
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize)]
 pub struct XMLDocx {
     pub content_type: Vec<u8>,
     pub rels: Vec<u8>,

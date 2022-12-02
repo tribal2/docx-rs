@@ -2,9 +2,9 @@ use super::*;
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Section {
     property: SectionProperty,

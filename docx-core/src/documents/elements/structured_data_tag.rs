@@ -1,12 +1,12 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 use crate::documents::BuildXML;
 // use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct StructuredDataTag {
     pub children: Vec<StructuredDataTagChild>,
@@ -24,7 +24,7 @@ impl Default for StructuredDataTag {
     }
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum StructuredDataTagChild {
     Run(Box<Run>),
     Paragraph(Box<Paragraph>),

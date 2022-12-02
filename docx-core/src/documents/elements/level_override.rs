@@ -3,13 +3,13 @@ use super::*;
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 /*
 17.9.8 lvlOverride (Numbering Level Definition Override)
 This element specifies an optional override which shall be applied in place of zero or more levels from the abstract numbering definition for a given numbering definition instance. Each instance of this element is used to override the appearance and behavior of a given numbering level definition within the given abstract numbering definition.
 */
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct LevelOverride {
     pub level: usize,

@@ -1,11 +1,11 @@
-use serde::{Serialize, Serializer};
+use serde::{Serialize, Serializer, Deserialize};
 
 use std::str::FromStr;
 
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Name {
     name: String,
 }

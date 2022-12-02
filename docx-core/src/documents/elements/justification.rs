@@ -1,4 +1,4 @@
-use serde::{Serialize, Serializer};
+use serde::{Serialize, Serializer, Deserialize};
 
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
@@ -11,7 +11,7 @@ use crate::xml_builder::*;
 // present without the val attribute, the default of the val attribute is centerGroup . This means that the instances
 // of mathematical text can be aligned with respect to each other, but the entire group of mathematical text is
 // centered as a whole.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Justification {
     pub val: String,
 }

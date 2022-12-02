@@ -4,7 +4,7 @@ use crate::documents::*;
 use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq, Default)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct TableOfContentsItem {
     pub instr: InstrToC,
     pub text: String,

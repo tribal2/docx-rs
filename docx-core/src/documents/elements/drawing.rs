@@ -1,17 +1,18 @@
 use super::*;
+use serde::Deserialize;
 use serde::{ser::*, Serialize};
 
 use crate::documents::BuildXML;
 use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq, Default, Serialize)]
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct Drawing {
     #[serde(flatten)]
     pub data: Option<DrawingData>,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum DrawingData {
     Pic(Pic),
     TextBox(TextBox),

@@ -1,3 +1,4 @@
+use serde::Deserialize;
 // Licensed under either of
 //
 // Apache License, Version 2.0, (LICENSE-APACHE or http://www.apache.org/licenses/LICENSE-2.0)
@@ -18,7 +19,7 @@ use xml::namespace::{self, Namespace};
 use xml::reader::{EventReader, XmlEvent};
 
 /// An XML Document
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Deserialize)]
 pub struct XmlDocument {
     /// Data contained within the parsed XML Document
     pub data: Vec<XmlData>,
@@ -47,7 +48,7 @@ impl fmt::Display for XmlDocument {
 ///     <sub></sub>
 /// </foo>
 /// ```
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct XmlData {
     /// Name of the tag (i.e. "foo")
     pub name: String,

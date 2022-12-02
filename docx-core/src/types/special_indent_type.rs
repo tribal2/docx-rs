@@ -1,18 +1,18 @@
 use wasm_bindgen::prelude::*;
 
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 // INFO: wasm-bindgen only allow c-style enum for now
 //       Please convert typescript type to following type.
-#[derive(Copy, Clone, Debug, PartialEq)]
+#[derive(Copy, Clone, Debug, PartialEq, Deserialize)]
 pub enum SpecialIndentType {
     FirstLine(i32),
     Hanging(i32),
 }
 
 #[wasm_bindgen]
-#[derive(Serialize, Copy, Clone, Debug)]
+#[derive(Serialize, Deserialize, Copy, Clone, Debug)]
 pub enum SpecialIndentKind {
     FirstLine,
     Hanging,

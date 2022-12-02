@@ -1,6 +1,6 @@
 use super::*;
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use std::str::FromStr;
 
 use crate::documents::BuildXML;
@@ -12,14 +12,14 @@ use crate::xml_builder::*;
   This element specifies the reference to a graphic object within the document. This graphic object is provided
   entirely by the document authors who choose to persist this data within the document.
 */
-#[derive(Debug, Clone, Serialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct AGraphicData {
     pub data_type: GraphicDataType,
     pub children: Vec<GraphicDataChild>,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum GraphicDataChild {
     Shape(WpsShape),
     Pic(Pic),
@@ -72,7 +72,7 @@ impl FromStr for GraphicDataType {
     }
 }
 
-#[derive(Debug, Clone, Serialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub enum GraphicDataType {
     Picture,

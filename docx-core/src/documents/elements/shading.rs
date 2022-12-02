@@ -1,3 +1,4 @@
+use serde::Deserialize;
 use serde::Serialize;
 
 use crate::documents::BuildXML;
@@ -5,7 +6,7 @@ use crate::types::*;
 use crate::xml_builder::*;
 
 // INFO: Theme is not supported now.
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Shading {
     pub shd_type: ShdType,

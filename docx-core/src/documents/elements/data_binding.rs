@@ -3,7 +3,7 @@ use serde::Serialize;
 use crate::documents::*;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq, Default)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Default)]
 pub struct DataBinding {
     pub xpath: Option<String>,
     pub prefix_mappings: Option<String>,

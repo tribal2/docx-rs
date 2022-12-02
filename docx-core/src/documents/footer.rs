@@ -5,7 +5,7 @@ use super::*;
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq, Serialize, Default)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Footer {
     pub has_numbering: bool,
@@ -34,7 +34,7 @@ impl Footer {
     }
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum FooterChild {
     Paragraph(Box<Paragraph>),
     Table(Box<Table>),

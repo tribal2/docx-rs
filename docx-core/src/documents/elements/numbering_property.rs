@@ -1,11 +1,11 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::{IndentLevel, NumberingId};
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct NumberingProperty {
     pub id: Option<NumberingId>,
     pub level: Option<IndentLevel>,

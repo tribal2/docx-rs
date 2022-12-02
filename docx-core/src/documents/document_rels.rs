@@ -4,7 +4,7 @@ use super::*;
 use crate::documents::BuildXML;
 use crate::{escape::*, xml_builder::*};
 
-#[derive(Debug, Clone, PartialEq, Serialize, Default)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DocumentRels {
     pub has_comments: bool,

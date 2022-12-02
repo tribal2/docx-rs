@@ -3,7 +3,7 @@ use crate::xml_builder::*;
 
 use serde::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct OutlineLvl {
     pub v: usize,
 }

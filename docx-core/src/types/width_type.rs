@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use std::fmt;
 use wasm_bindgen::prelude::*;
 
@@ -6,7 +6,7 @@ use super::errors;
 use std::str::FromStr;
 
 #[wasm_bindgen]
-#[derive(Copy, Clone, Debug, PartialEq, Serialize)]
+#[derive(Copy, Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub enum WidthType {
     Dxa,

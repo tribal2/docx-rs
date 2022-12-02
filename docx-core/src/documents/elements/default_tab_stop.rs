@@ -1,9 +1,9 @@
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-use serde::{Serialize, Serializer};
+use serde::{Serialize, Serializer, Deserialize};
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct DefaultTabStop {
     val: usize,
 }

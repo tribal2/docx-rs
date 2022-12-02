@@ -1,17 +1,17 @@
 use super::*;
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, Serialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct TextBoxContent {
     pub children: Vec<TextBoxContentChild>,
     pub has_numbering: bool,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum TextBoxContentChild {
     Paragraph(Box<Paragraph>),
     Table(Box<Table>),

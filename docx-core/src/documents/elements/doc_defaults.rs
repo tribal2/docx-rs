@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use crate::xml_builder::*;
 use crate::{documents::BuildXML, RunProperty};
@@ -6,7 +6,7 @@ use crate::{documents::BuildXML, RunProperty};
 use super::run_property_default::*;
 use super::RunFonts;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DocDefaults {
     run_property_default: RunPropertyDefault,

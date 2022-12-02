@@ -1,10 +1,10 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 use crate::xml_builder::*;
 use crate::{documents::BuildXML, HeightRule};
 
-#[derive(Debug, Clone, PartialEq, Serialize, Default)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct TableRowProperty {
     grid_after: Option<u32>,

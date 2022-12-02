@@ -1,10 +1,10 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use std::fmt;
 
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Debug, Clone, Copy, Serialize, PartialEq, ts_rs::TS)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub enum DrawingPositionType {
@@ -13,7 +13,7 @@ pub enum DrawingPositionType {
 }
 
 #[wasm_bindgen]
-#[derive(Debug, Clone, Copy, Serialize, PartialEq, ts_rs::TS)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub enum PicAlign {
@@ -36,7 +36,7 @@ impl fmt::Display for PicAlign {
     }
 }
 
-#[derive(Debug, Clone, Copy, Serialize, PartialEq, ts_rs::TS)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub enum DrawingPosition {

@@ -4,9 +4,10 @@ use crate::types::*;
 use crate::xml_builder::*;
 use crate::{Footer, Header};
 
+use serde::Deserialize;
 use serde::Serialize;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SectionProperty {
     pub page_size: PageSize,

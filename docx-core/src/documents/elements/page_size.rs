@@ -2,9 +2,10 @@ use crate::documents::BuildXML;
 use crate::types::*;
 use crate::xml_builder::*;
 
+use serde::Deserialize;
 use serde::Serialize;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PageSize {
     w: u32,

@@ -4,7 +4,7 @@ use serde::Serialize;
 use crate::documents::*;
 use crate::xml_builder::*;
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Comment {
     pub id: usize,
@@ -14,7 +14,7 @@ pub struct Comment {
     pub parent_comment_id: Option<usize>,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum CommentChild {
     Paragraph(Paragraph),
     Table(Table),

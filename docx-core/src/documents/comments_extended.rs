@@ -5,7 +5,7 @@ use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
 // i.e.    <w15:commentEx w15:paraId="00000001" w15:paraIdParent="57D1BD7C" w15:done="0"/>
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CommentsExtended {
     pub children: Vec<CommentExtended>,

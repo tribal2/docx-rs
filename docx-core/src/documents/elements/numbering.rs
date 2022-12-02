@@ -2,9 +2,9 @@ use crate::documents::BuildXML;
 use crate::xml_builder::*;
 
 use super::*;
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Numbering {
     id: usize,

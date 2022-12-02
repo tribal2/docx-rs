@@ -1,10 +1,11 @@
+use serde::Deserialize;
 use serde::{Serialize, Serializer};
 
 use crate::documents::BuildXML;
 use crate::types::*;
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct TableLayout {
     layout_type: TableLayoutType,
 }

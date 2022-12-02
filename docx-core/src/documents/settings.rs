@@ -5,7 +5,7 @@ use crate::xml_builder::*;
 
 use serde::Serialize;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Settings {
     default_tab_stop: DefaultTabStop,

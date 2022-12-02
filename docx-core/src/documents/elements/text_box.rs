@@ -3,7 +3,7 @@ use serde::Serialize;
 use crate::documents::*;
 use crate::types::*;
 
-#[derive(Debug, Clone, Serialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct TextBox {
     // For writer only

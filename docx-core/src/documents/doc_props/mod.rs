@@ -8,9 +8,10 @@ pub use self::custom::*;
 
 use crate::documents::BuildXML;
 
+use serde::Deserialize;
 use serde::Serialize;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DocProps {
     pub app: AppProps,
@@ -50,7 +51,7 @@ impl DocProps {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize)]
 pub struct XMLDocProps {
     pub app: Vec<u8>,
     pub core: Vec<u8>,

@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::*;
 
-#[derive(Debug, Clone, PartialEq, Serialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WebSettings {
     pub divs: Vec<Div>,

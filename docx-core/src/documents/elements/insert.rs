@@ -1,12 +1,12 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 use super::*;
 
 use crate::documents::{BuildXML, HistoryId, Run};
 use crate::xml_builder::*;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub enum InsertChild {
     Run(Box<Run>),
     Delete(Delete),
@@ -59,7 +59,7 @@ impl Serialize for InsertChild {
     }
 }
 
-#[derive(Serialize, Debug, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Insert {
     pub children: Vec<InsertChild>,
     pub author: String,

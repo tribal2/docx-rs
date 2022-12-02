@@ -1,6 +1,6 @@
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Clone, PartialEq, Serialize, ts_rs::TS)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub struct FontSchemeFont {
@@ -8,7 +8,7 @@ pub struct FontSchemeFont {
     pub typeface: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize, Default, ts_rs::TS)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, Default, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub struct FontGroup {
@@ -18,7 +18,7 @@ pub struct FontGroup {
     pub fonts: Vec<FontSchemeFont>,
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize, Default, ts_rs::TS)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize, Default, ts_rs::TS)]
 #[ts(export)]
 #[serde(rename_all = "camelCase")]
 pub struct FontScheme {
